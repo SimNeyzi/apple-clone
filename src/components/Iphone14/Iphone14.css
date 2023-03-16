@@ -1,0 +1,111 @@
+div {
+  display: block;
+}
+
+.iphone14 {
+  border: 2px solid slateblue;
+  height: 36em;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.module-content {
+  height: 36em;
+  border: 2px solid lawngreen;
+}
+
+.unit-wrapper {
+  border: 2px solid black;
+  height: 36em;
+  display: flex;
+  flex-direction: column;
+  /* flex-direction: column; */
+}
+.unit-link {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  /* height: 100%; */
+  border: 2px solid pink;
+}
+
+.unit-text-wrapper {
+  position: relative;
+  text-align: center;
+  background-color: #fcfad4;
+  z-index: 4;
+}
+
+.iphone14-headline {
+  margin-top: 1em;
+  line-height: 1.07143;
+  font-weight: 500;
+  font-size: 3.1em;
+  letter-spacing: -0.005em;
+}
+
+.iphone14-subhead {
+  font-size: 1.6em;
+  font-weight: 300;
+  line-height: 1.07143;
+  letter-spacing: -0.005em;
+  margin-top: 0.3em;
+}
+
+.callout {
+  font-weight: 300;
+  margin-top: 1em;
+  color: #6e6e73;
+  letter-spacing: 0.011em;
+  line-height: 1.19048;
+}
+
+.cta-links {
+  margin-top: 1em;
+  position: relative;
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+.icon {
+  color: #06c;
+}
+
+.learn-more {
+  margin-left: -0.4em;
+  /* border: 2px solid hotpink; */
+}
+
+.shop {
+  margin-left: 2em;
+}
+
+.chevron-right {
+  display: inline-block;
+  padding-left: 0.3em;
+  /* border: 2px solid red; */
+  height: auto;
+}
+
+.unit-image-wrapper {
+  border: 2px solid hotpink;
+}
+
+.unit-image {
+  /* height: 100%; */
+  /* position: absolute; */
+  border: 2px solid hotpink;
+  display: inline-block;
+  /* background: url("../../assets/iphone14__yellow.jpg"); */
+}
+
+.iphone14-image {
+  /* display: flex; */
+  /* width: 100%;
+  height: 100%; */
+  padding: 0;
+  margin: 0;
+
+  /* border: 3px solid orange; */
+}

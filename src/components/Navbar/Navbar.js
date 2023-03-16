@@ -27,8 +27,8 @@ const Navbar = () => {
             <FaApple />
           </a>
         </li>
-        {pages.map((page) => (
-          <li className="page">
+        {pages.map((page, key) => (
+          <li className="page" key={key}>
             <a href="/" className="page__link">
               {page}
             </a>

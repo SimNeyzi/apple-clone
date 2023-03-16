@@ -1,11 +1,5 @@
-*,
-html {
-  margin: 0;
-  padding: 0;
-}
-
 .nav {
-  height: 2em;
+  height: 2.5em;
   background-color: #313a45;
   display: flex;
   padding: 0.5em;
@@ -38,7 +32,7 @@ html {
 .bag,
 .menu {
   font-size: 1em;
-  margin: 1em;
+  margin: 0.5em;
   /* border: 2px solid yellow; */
 }
 
