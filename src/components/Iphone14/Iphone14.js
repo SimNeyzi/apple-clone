@@ -1,10 +1,19 @@
 import React from "react";
 import "./Iphone14.css";
 import { BsChevronRight } from "react-icons/bs";
+import iphone14Yellow from "./iphone14__yellow.jpg";
 
 const Iphone14 = () => {
   return (
-    <section className="iphone14">
+    <section
+      className="iphone14 unit-image"
+      style={{
+        // backgroundImage: `url('${iphone14Yellow}')`,
+        background: `url('${iphone14Yellow}') no-repeat center center`,
+        backgroundSize: "cover",
+        // backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="module-content">
         <div className="unit-wrapper yellow">
           <a href="/" className="unit-link">
@@ -26,15 +35,6 @@ const Iphone14 = () => {
                 Shop
                 <BsChevronRight className="chevron-right" />
               </a>
-            </div>
-          </div>
-          <div className="unit-image-wrapper">
-            <div className="unit-image">
-              <img
-                src={require("../../images/iphone14__yellow.jpg")}
-                alt="iPhone14"
-                className="iphone14-image"
-              />
             </div>
           </div>
         </div>

@@ -3,38 +3,46 @@ div {
 }
 
 .iphone14 {
+  /* display: flex; */
   border: 2px solid slateblue;
+  width: 100%;
   height: 36em;
-  box-sizing: border-box;
-  position: relative;
+  overflow: hidden;
+  /* box-sizing: border-box; */
+  /* position: relative; */
+}
+
+.unit-image {
+  /* height: 100%;
+  width: 100%; */
 }
 
 .module-content {
-  height: 36em;
-  border: 2px solid lawngreen;
+  /* border: 2px solid lawngreen; */
 }
 
 .unit-wrapper {
-  border: 2px solid black;
-  height: 36em;
+  /* border: 2px solid black; */
+  /* height: 36em; */
   display: flex;
   flex-direction: column;
+  flex: 1;
   /* flex-direction: column; */
 }
 .unit-link {
   position: absolute;
   display: flex;
-  width: 100%;
   height: 100%;
-  /* height: 100%; */
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
 }
 
 .unit-text-wrapper {
   position: relative;
   text-align: center;
-  background-color: #fcfad4;
+  /* background-color: #fcfad4; */
   z-index: 4;
+  height: 100%;
+  /* border: 3px solid purple; */
 }
 
 .iphone14-headline {
@@ -86,26 +94,4 @@ div {
   padding-left: 0.3em;
   /* border: 2px solid red; */
   height: auto;
-}
-
-.unit-image-wrapper {
-  border: 2px solid hotpink;
-}
-
-.unit-image {
-  /* height: 100%; */
-  /* position: absolute; */
-  border: 2px solid hotpink;
-  display: inline-block;
-  /* background: url("../../assets/iphone14__yellow.jpg"); */
-}
-
-.iphone14-image {
-  /* display: flex; */
-  /* width: 100%;
-  height: 100%; */
-  padding: 0;
-  margin: 0;
-
-  /* border: 3px solid orange; */
 }
