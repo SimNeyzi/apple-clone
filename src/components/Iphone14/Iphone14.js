@@ -1,19 +1,10 @@
 import React from "react";
 import "./Iphone14.css";
-import { BsChevronRight } from "react-icons/bs";
-import iphone14Yellow from "./iphone14__yellow.jpg";
+import CtaButtons from "../CtaButtons/CtaButtons.js";
 
 const Iphone14 = () => {
   return (
-    <section
-      className="iphone14 unit-image"
-      style={{
-        // backgroundImage: `url('${iphone14Yellow}')`,
-        background: `url('${iphone14Yellow}') no-repeat center center`,
-        backgroundSize: "cover",
-        // backgroundRepeat: "no-repeat",
-      }}
-    >
+    <section className="iphone14 unit-background">
       <div className="module-content">
         <div className="unit-wrapper yellow">
           <a href="/" className="unit-link">
@@ -26,16 +17,7 @@ const Iphone14 = () => {
               yellow.
             </h3>
             <p className="callout">Available starting 3.14</p>
-            <div className="cta-links">
-              <a href="/" className="icon learn-more">
-                Learn More
-                <BsChevronRight className="chevron-right" />
-              </a>
-              <a href="/" className="icon shop">
-                Shop
-                <BsChevronRight className="chevron-right" />
-              </a>
-            </div>
+            <CtaButtons ctaFirst="Learn more" ctaSecond="Shop" />
           </div>
         </div>
       </div>

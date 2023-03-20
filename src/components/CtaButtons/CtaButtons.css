@@ -1,0 +1,25 @@
+.cta-links {
+  margin-top: 1em;
+  position: relative;
+  font-size: var(--cta-size);
+  font-weight: 500;
+}
+
+.icon {
+  /* color: #06c; */
+  color: #2997ff;
+}
+
+.ctaFrist {
+  margin-left: -0.4em;
+}
+
+.ctaSecond {
+  margin-left: 2em;
+}
+
+.chevron-right {
+  display: inline-block;
+  padding-left: 0.3em;
+  height: auto;
+}
