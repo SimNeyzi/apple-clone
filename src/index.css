@@ -24,3 +24,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+:root {
+  --headline-size: 3.1em;
+  --subHeadline-size: 1.6em;
+  --cta-size: 1em;
+}
