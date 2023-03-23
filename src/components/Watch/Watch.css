@@ -1,13 +1,14 @@
-.iphone14 {
+.watch {
   width: 100%;
   height: 34em;
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
+  margin-top: 0.8em;
 }
 
-.unit-background {
-  background: url(iphone14__yellow.jpg) no-repeat center center;
+.unit-background-watch {
+  background: url(watch.jpg) no-repeat center center;
   background-size: cover;
 }
 
@@ -19,6 +20,7 @@
   position: absolute;
   display: flex;
   height: 100%;
+  width: 100%;
 }
 
 .unit-text-wrapper {
@@ -27,40 +29,39 @@
   height: 100%;
 }
 
-.iphone14-headline {
+.watch-headline {
   margin-top: 1em;
   line-height: 1.07143;
-  font-weight: 500;
-  font-size: var(--headline-size);
-  letter-spacing: -0.005em;
+  font-weight: 700;
+  font-size: 2.5em;
+  letter-spacing: -0.008em;
+  color: white;
 }
 
-.iphone14-subhead {
+.watch-series {
+  color: #cb2027;
+  letter-spacing: 0.05em;
+  size: 1.5em;
+}
+.watch-subhead {
   font-size: var(--subHeadline-size);
   font-weight: 300;
   line-height: 1.07143;
   letter-spacing: -0.005em;
   margin-top: 0.3em;
-}
-
-.callout {
-  font-weight: 300;
-  margin-top: 1em;
-  color: #6e6e73;
-  letter-spacing: 0.011em;
-  line-height: 1.19048;
+  color: white;
 }
 
 @media only screen and (max-width: 768px) {
-  .iphone14 {
+  .watch {
     height: 28em;
   }
 
-  .iphone14-headline {
+  .watch-headline {
     font-size: 2.5em;
   }
 
-  .iphone14-subhead {
+  .watch-subhead {
     font-size: 1.5em;
   }
 

@@ -1,13 +1,15 @@
-.iphone14 {
+.macbookPro {
   width: 100%;
-  height: 34em;
+  height: 30em;
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
+  margin-top: 0.8em;
+  margin-left: 0.7em;
 }
 
-.unit-background {
-  background: url(iphone14__yellow.jpg) no-repeat center center;
+.unit-background-macbookPro {
+  background: url(macbookPro.jpg) no-repeat center center;
   background-size: cover;
 }
 
@@ -19,6 +21,7 @@
   position: absolute;
   display: flex;
   height: 100%;
+  width: 100%;
 }
 
 .unit-text-wrapper {
@@ -27,40 +30,39 @@
   height: 100%;
 }
 
-.iphone14-headline {
+.macbookPro-headline {
   margin-top: 1em;
   line-height: 1.07143;
   font-weight: 500;
-  font-size: var(--headline-size);
-  letter-spacing: -0.005em;
+  font-size: 2.5em;
+  letter-spacing: -0.008em;
+  color: white;
 }
 
-.iphone14-subhead {
-  font-size: var(--subHeadline-size);
+.macbookPro-series {
+  color: #cb2027;
+  letter-spacing: 0.05em;
+  size: 1.5em;
+}
+.macbookPro-subhead {
+  font-size: 1.2em;
   font-weight: 300;
   line-height: 1.07143;
   letter-spacing: -0.005em;
   margin-top: 0.3em;
-}
-
-.callout {
-  font-weight: 300;
-  margin-top: 1em;
-  color: #6e6e73;
-  letter-spacing: 0.011em;
-  line-height: 1.19048;
+  color: white;
 }
 
 @media only screen and (max-width: 768px) {
-  .iphone14 {
+  .macbookPro {
     height: 28em;
   }
 
-  .iphone14-headline {
+  .macbookPro-headline {
     font-size: 2.5em;
   }
 
-  .iphone14-subhead {
+  .macbookPro-subhead {
     font-size: 1.5em;
   }
 

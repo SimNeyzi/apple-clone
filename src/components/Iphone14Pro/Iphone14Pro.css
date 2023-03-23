@@ -1,15 +1,10 @@
-div {
-  display: block;
-}
-
 .iphone14Pro {
-  border: 2px solid slateblue;
   width: 100%;
   height: 34em;
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
-  margin-top: 0.5em;
+  margin-top: 0.8em;
 }
 
 .unit-background-pro {
@@ -25,16 +20,12 @@ div {
   position: absolute;
   display: flex;
   height: 100%;
-  /* border: 2px solid pink; */
 }
 
 .unit-text-wrapper {
   position: relative;
   text-align: center;
-  /* background-color: #fcfad4; */
-  z-index: 4;
   height: 100%;
-  /* border: 3px solid purple; */
 }
 
 .iphone14Pro-headline {
