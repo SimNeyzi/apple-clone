@@ -22,18 +22,22 @@ const Footer = () => {
         reason.
       </p>
       <div className="footer-bar">
-        <h5>
-          <strong>{footerSections[0]["shopAndLearn"]}</strong>
-        </h5>
-        <ul className="shop-and-learn">
-          {footerSections[0][["links"]].map((link) => (
-            <li className="link-li">
-              <a href="/" className="link">
-                {link}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {footerSections.map((section, key) => (
+          <div className="section">
+            <h5 key={key + section.category} className="section-heading">
+              <strong>{section.category}</strong>
+            </h5>
+            <ul className="footer-list">
+              {section.links.map((link, key) => (
+                <li className="li-item">
+                  <a href="/" className="link">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </footer>
   );
