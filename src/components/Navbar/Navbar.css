@@ -63,6 +63,33 @@ nav {
   justify-content: center;
 }
 
+.nav-flyout-scrool-container {
+  position: absolute;
+  z-index: 5;
+  text-align: left;
+  background-color: black;
+  width: 100%;
+  height: 22em;
+  animation-name: slidedown;
+  animation-duration: 0.5s;
+}
+
+@keyframes slidedown {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+
+  to {
+    height: 22em;
+    opacity: 1;
+  }
+}
+
+.nav-flyout-content {
+  color: antiquewhite;
+}
+
 @media only screen and (max-width: 768px) {
   .page {
     display: none;
