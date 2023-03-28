@@ -1,25 +1,14 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import pages from "./pagesData.js";
 import { FaApple } from "react-icons/fa";
 import { TfiSearch } from "react-icons/tfi";
 import { BsBag } from "react-icons/bs";
 import { TbMenu } from "react-icons/tb";
 
-const pages = [
-  "Store",
-  "Mac",
-  "iPad",
-  "iPhone",
-  "Watch",
-  "Airpods",
-  "TV & Home",
-  "Entertainment",
-  "Accessories",
-  "Support",
-];
-
 const Navbar = () => {
   const [isShown, setIsShown] = useState(false);
+  const [currentPage, setCurrenPage] = useState("");
   return (
     <>
       <nav className="nav">
@@ -29,20 +18,20 @@ const Navbar = () => {
               <FaApple />
             </a>
           </li>
+
           {pages.map((page, key) => (
             <li
               className="page"
               key={page + key}
-              onMouseEnter={() => setIsShown(true)}
-              onMouseLeave={() => setIsShown(false)}
+              onMouseEnter={() => (setIsShown(true), setCurrenPage(page.page))}
+              onMouseLeave={() => (setIsShown(false), setCurrenPage(""))}
             >
               <a href="/" className="page__link">
-                {page}
+                {page.page}
               </a>
             </li>
           ))}
         </ul>
-
         <ul className="icons">
           <li className="search">
             <a href="/" className="search__link">
@@ -64,7 +53,11 @@ const Navbar = () => {
       </nav>
       {isShown && (
         <div className="nav-flyout-scrool-container">
-          <div className="nav-flyout-content">Shop</div>
+          <div className="nav-flyout-content">
+            {pages.map(
+              (page, key) => page.page === currentPage && page.subMenu.heading
+            )}
+          </div>
         </div>
       )}
     </>

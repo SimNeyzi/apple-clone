@@ -8,6 +8,7 @@ nav {
   background-color: #313a45;
   z-index: 4;
   opacity: 0.9;
+  width: 100%;
   /* overflow-y: hidden; */
 }
 
@@ -17,10 +18,13 @@ nav {
   list-style-type: none;
   align-items: center;
   justify-content: center;
+  /* width: 100%; */
+  border: 2px solid hotpink;
 }
 
 .page {
   margin: 1em;
+  border: 2px solid red;
 }
 
 .page__link {
@@ -72,6 +76,7 @@ nav {
   height: 22em;
   animation-name: slidedown;
   animation-duration: 0.5s;
+  border: 2px solid violet;
 }
 
 @keyframes slidedown {
