@@ -1,15 +1,16 @@
 nav {
   height: 2.5em;
   display: flex;
-  padding: 0.5em;
   justify-content: center;
+  align-items: center;
   position: sticky;
   top: 0;
   background-color: #313a45;
   z-index: 4;
-  opacity: 0.9;
+  /* opacity: 0.9; */
   width: 100%;
-  /* overflow-y: hidden; */
+  white-space: nowrap;
+  text-overflow: unset;
 }
 
 .pages {
@@ -18,13 +19,14 @@ nav {
   list-style-type: none;
   align-items: center;
   justify-content: center;
-  /* width: 100%; */
-  border: 2px solid hotpink;
+  /* width: 80%; */
+  /* border: 2px solid hotpink; */
 }
 
 .page {
   margin: 1em;
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  /* padding: 0.5em; */
 }
 
 .page__link {
@@ -32,16 +34,9 @@ nav {
   color: white;
 }
 
-.logo,
-.search,
-.bag,
-.menu {
-  font-size: 1em;
-  margin: 0.5em;
-}
-
 .search,
 .bag {
+  font-size: 1em;
   margin: 1em;
 }
 
@@ -70,29 +65,63 @@ nav {
 .nav-flyout-scrool-container {
   position: absolute;
   z-index: 5;
-  text-align: left;
+  top: 2.5em;
   background-color: black;
   width: 100%;
   height: 22em;
   animation-name: slidedown;
   animation-duration: 0.5s;
-  border: 2px solid violet;
+  /* border: 2px solid violet; */
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes slidedown {
   from {
     height: 0;
-    opacity: 0;
+    /* opacity: 0; */
   }
 
   to {
     height: 22em;
-    opacity: 1;
+    /* opacity: 1; */
   }
 }
 
 .nav-flyout-content {
   color: antiquewhite;
+  display: flex;
+  /* margin-left: 1.5em; */
+  /* width: 55%; */
+  justify-content: center;
+  /* align-items: center; */
+
+  /* border: 2px solid orange; */
+}
+
+.pages-container {
+  /* border: 2px solid white; */
+  display: flex;
+  /* justify-content: center; */
+  /* width: 100%; */
+  /* margin: 1% 0 1%; */
+  margin-top: 2em;
+  margin-right: 20em;
+}
+
+.submenu-container {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1em 3em 1em 0;
+}
+
+.submenu-items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style-type: none;
 }
 
 @media only screen and (max-width: 768px) {
@@ -100,11 +129,24 @@ nav {
     display: none;
   }
 
-  .nav {
-    display: flex;
-    justify-content: space-between;
+  .pages {
+    justify-content: flex-start;
   }
 
+  .search,
+  .bag,
+  .menu {
+    margin: 0.5em;
+    font-size: 1.3em;
+  }
+
+  nav {
+    justify-content: space-between;
+  }
+  .icons {
+    display: flex;
+    justify-content: end;
+  }
   .menu {
     display: flex;
   }

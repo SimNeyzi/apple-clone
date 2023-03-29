@@ -24,7 +24,6 @@ const Navbar = () => {
               className="page"
               key={page + key}
               onMouseEnter={() => (setIsShown(true), setCurrenPage(page.page))}
-              onMouseLeave={() => (setIsShown(false), setCurrenPage(""))}
             >
               <a href="/" className="page__link">
                 {page.page}
@@ -43,23 +42,43 @@ const Navbar = () => {
               <BsBag />
             </a>
           </li>
-
           <li className="menu">
             <a href="/" className="menu__link">
               <TbMenu />
             </a>
           </li>
         </ul>
-      </nav>
-      {isShown && (
-        <div className="nav-flyout-scrool-container">
-          <div className="nav-flyout-content">
-            {pages.map(
-              (page, key) => page.page === currentPage && page.subMenu.heading
-            )}
+
+        {isShown && (
+          <div
+            className="nav-flyout-scrool-container"
+            // onMouseLeave={() => (setIsShown(false), setCurrenPage(""))}
+          >
+            <div className="nav-flyout-content">
+              <div className="pages-container">
+                {pages.map(
+                  (page, key) =>
+                    page.page === currentPage &&
+                    page.subMenus.map((submenu, key) => (
+                      <div className="submenu-container">
+                        <div key={submenu + key} className="submenu-heading">
+                          {submenu.heading}
+                        </div>
+                        <ul className="submenu-items">
+                          {submenu.items.map((item, key) => (
+                            <li>
+                              <a href="/">{item}</a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </nav>
     </>
   );
 };
