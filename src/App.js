@@ -8,6 +8,8 @@ import MacbookPro from "./components/MacbookPro/MacbookPro";
 import HomePod from "./components/HomePod/HomePod";
 import AirPods from "./components/AirPods/AirPods";
 import Footer from "./components/Footer/Footer";
+import MovieSlider from "./components/MovieSlider/MovieSlider";
+
 function App() {
   return (
     <div className="App">
@@ -24,7 +26,7 @@ function App() {
         <HomePod />
         <AirPods />
       </div>
-      <div style={{ margin: "2em" }}>Image Slider</div>
+      <MovieSlider />
       <Footer />
     </div>
   );

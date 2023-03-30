@@ -9,9 +9,10 @@ import { TbMenu } from "react-icons/tb";
 const Navbar = () => {
   const [isShown, setIsShown] = useState(false);
   const [currentPage, setCurrenPage] = useState("");
+  const [navColor, setNavColor] = useState("grey");
   return (
     <>
-      <nav className="nav">
+      <nav className={"nav-" + navColor}>
         <ul className="pages">
           <li className="logo">
             <a href="/" className="logo__link">
@@ -23,7 +24,9 @@ const Navbar = () => {
             <li
               className="page"
               key={page + key}
-              onMouseEnter={() => (setIsShown(true), setCurrenPage(page.page))}
+              onMouseEnter={() => (
+                setIsShown(true), setCurrenPage(page.page), setNavColor("black")
+              )}
             >
               <a href="/" className="page__link">
                 {page.page}
@@ -52,29 +55,31 @@ const Navbar = () => {
         {isShown && (
           <div
             className="nav-flyout-scrool-container"
-            // onMouseLeave={() => (setIsShown(false), setCurrenPage(""))}
+            onMouseLeave={() => (
+              setIsShown(false), setCurrenPage(""), setNavColor("grey")
+            )}
           >
             <div className="nav-flyout-content">
-              <div className="pages-container">
-                {pages.map(
-                  (page, key) =>
-                    page.page === currentPage &&
-                    page.subMenus.map((submenu, key) => (
-                      <div className="submenu-container">
-                        <div key={submenu + key} className="submenu-heading">
-                          {submenu.heading}
-                        </div>
-                        <ul className="submenu-items">
-                          {submenu.items.map((item, key) => (
-                            <li>
-                              <a href="/">{item}</a>
-                            </li>
-                          ))}
-                        </ul>
+              {pages.map(
+                (page, key) =>
+                  page.page === currentPage &&
+                  page.subMenus.map((submenu, key) => (
+                    <div className=" submenu-container">
+                      <div key={submenu + key} className="submenu-heading">
+                        {submenu.heading}
                       </div>
-                    ))
-                )}
-              </div>
+                      <ul className="submenu-items">
+                        {submenu.items.map((item, key) => (
+                          <li>
+                            <a href="/" className="item-link">
+                              {item}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))
+              )}
             </div>
           </div>
         )}

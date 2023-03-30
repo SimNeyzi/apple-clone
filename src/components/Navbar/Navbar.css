@@ -5,12 +5,18 @@ nav {
   align-items: center;
   position: sticky;
   top: 0;
-  background-color: #313a45;
+  opacity: 0.99;
   z-index: 4;
-  /* opacity: 0.9; */
   width: 100%;
   white-space: nowrap;
-  text-overflow: unset;
+}
+
+.nav-grey {
+  background-color: #313a45;
+}
+
+.nav-black {
+  background-color: black;
 }
 
 .pages {
@@ -19,12 +25,11 @@ nav {
   list-style-type: none;
   align-items: center;
   justify-content: center;
-  /* width: 80%; */
   /* border: 2px solid hotpink; */
 }
 
 .page {
-  margin: 1em;
+  margin: 0.6em;
   /* border: 2px solid red; */
   /* padding: 0.5em; */
 }
@@ -73,40 +78,24 @@ nav {
   animation-duration: 0.5s;
   /* border: 2px solid violet; */
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 @keyframes slidedown {
   from {
     height: 0;
-    /* opacity: 0; */
   }
 
   to {
     height: 22em;
-    /* opacity: 1; */
   }
 }
 
 .nav-flyout-content {
   color: antiquewhite;
   display: flex;
-  /* margin-left: 1.5em; */
-  /* width: 55%; */
-  justify-content: center;
-  /* align-items: center; */
-
+  justify-content: space-between;
   /* border: 2px solid orange; */
-}
-
-.pages-container {
-  /* border: 2px solid white; */
-  display: flex;
-  /* justify-content: center; */
-  /* width: 100%; */
-  /* margin: 1% 0 1%; */
-  margin-top: 2em;
-  margin-right: 20em;
 }
 
 .submenu-container {
@@ -114,6 +103,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
   margin: 1em 3em 1em 0;
 }
 
@@ -124,12 +114,17 @@ nav {
   list-style-type: none;
 }
 
+.item-link {
+  color: antiquewhite;
+}
+
 @media only screen and (max-width: 768px) {
   .page {
     display: none;
   }
 
   .pages {
+    margin-left: 1em;
     justify-content: flex-start;
   }
 
