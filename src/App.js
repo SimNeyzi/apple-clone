@@ -14,6 +14,7 @@ import img1 from "./components/Slider/image01.jpg";
 import img2 from "./components/Slider/image02.jpg";
 import img3 from "./components/Slider/image03.jpg";
 
+const images = [img1, img2, img3];
 function App() {
   return (
     <div className="App">
@@ -30,11 +31,7 @@ function App() {
         <HomePod />
         <AirPods />
       </div>
-      <Slider>
-        <img src={img1} alt="show" style={{ width: "100%", height: "100%" }} />
-        <img src={img2} alt="show" style={{ width: "100%", height: "100%" }} />
-        <img src={img3} alt="show" style={{ width: "100%", height: "100%" }} />
-      </Slider>
+      <Slider images={images} />
 
       <Footer />
     </div>
