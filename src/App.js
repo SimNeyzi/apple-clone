@@ -31,6 +31,7 @@ function App() {
         <HomePod />
         <AirPods />
       </div>
+
       <Slider images={images} />
 
       <Footer />

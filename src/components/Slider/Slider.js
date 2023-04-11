@@ -54,6 +54,8 @@ const Slider = ({ images }) => {
   }
 
   const actionHandler = useCallback(() => {
+    console.log(containerRef.current.children[current - 1].style.border);
+
     containerRef.current.style.transition = "ease 1000ms";
     if (current >= images.length) {
       setTranslate(containerRef.current.clientWidth * (images.length + 1));
@@ -66,7 +68,6 @@ const Slider = ({ images }) => {
 
   useEffect(() => {
     const transitionend = () => {
-      console.log("transitioned");
       if (current <= 1) {
         containerRef.current.style.transition = "ease 0ms";
         setTranslate(containerRef.current.clientWidth * current);
@@ -78,15 +79,18 @@ const Slider = ({ images }) => {
       }
     };
 
+    let activeSlide = containerRef.current;
+    console.log(activeSlide.children[current].style);
+    activeSlide.children[current].style.backgroundColor = "";
     document.addEventListener("transitionend", transitionend);
 
     return () => {
       document.removeEventListener("transitionend", transitionend);
+      // activeSlide.children[current].style.backdropFilter = "blur(4px)";
     };
   }, [current, images]);
 
   useLayoutEffect(() => {
-    console.log("action handler");
     timeoutRef.current = setTimeout(() => actionHandler(), delay);
     return () => {
       resetTimeout();
@@ -94,17 +98,27 @@ const Slider = ({ images }) => {
   }, [actionHandler]);
 
   return (
-    <section className="slideshow">
-      <ul
-        ref={containerRef}
-        className="slideshowSlider"
-        style={{
-          transform: `translate(${-translate}px)`,
-        }}
-      >
-        {slides}
-      </ul>
-    </section>
+    <div className="test">
+      <section className="slideshow">
+        <ul
+          ref={containerRef}
+          className="slideshowSlider"
+          style={{
+            transform: `translate(${-translate}px)`,
+          }}
+        >
+          {slides}
+        </ul>
+        <div className={`slideshowDots`}>
+          {images.map((_, idx) => (
+            <div
+              key={idx}
+              className={`slideshowDot${current - 1 === idx ? " active" : ""}`}
+            ></div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 };
 
