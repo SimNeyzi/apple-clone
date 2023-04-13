@@ -1,6 +1,6 @@
 .slideshowContainer {
   width: 100%;
-  height: 70vh;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -28,8 +28,17 @@
   opacity: 0.33;
 }
 
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 1em;
+}
 /* Buttons */
 .slideshowDots {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,4 +54,15 @@
 
 .slideshowDot.active {
   background-color: darkgray;
+}
+
+.playbutton-container {
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.play-button {
+  cursor: pointer;
+  font-size: 1.8em;
 }

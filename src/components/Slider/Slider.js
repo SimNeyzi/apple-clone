@@ -6,13 +6,14 @@ import React, {
   useEffect,
   useCallback,
 } from "react";
-
+import { BsPlayCircle, BsPauseCircle } from "react-icons/bs";
 import "./Slider.css";
 
 const Slider = ({ images }) => {
   const containerRef = useRef();
   const [current, setCurrent] = useState(1);
   const [translate, setTranslate] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const timeoutRef = useRef(null);
   const delay = 2500;
   const slides = useMemo(() => {
@@ -74,6 +75,12 @@ const Slider = ({ images }) => {
     actionHandler(idx);
   };
 
+  const handleSlider = () => {
+    console.log("isPaused 1: ", isPaused);
+    setIsPaused(!isPaused);
+    console.log("isPaused 2: ", isPaused);
+  };
+
   useEffect(() => {
     let activeSlide = containerRef.current.children[current];
     const transitionend = () => {
@@ -97,11 +104,14 @@ const Slider = ({ images }) => {
   }, [current, images]);
 
   useLayoutEffect(() => {
-    timeoutRef.current = setTimeout(() => actionHandler(), delay);
+    if (!isPaused) {
+      timeoutRef.current = setTimeout(() => actionHandler(), delay);
+    }
+
     return () => {
       resetTimeout();
     };
-  }, [actionHandler]);
+  }, [actionHandler, isPaused]);
 
   return (
     <div className="slideshowContainer">
@@ -115,14 +125,25 @@ const Slider = ({ images }) => {
         >
           {slides}
         </ul>
-        <div className={`slideshowDots`}>
-          {images.map((_, idx) => (
-            <div
-              key={idx}
-              className={`slideshowDot${current - 1 === idx ? " active" : ""}`}
-              onClick={() => handleClick(idx)}
-            ></div>
-          ))}
+        <div className="navigation">
+          <div className={`slideshowDots`}>
+            {images.map((_, idx) => (
+              <div
+                key={idx}
+                className={`slideshowDot${
+                  current - 1 === idx ? " active" : ""
+                }`}
+                onClick={() => handleClick(idx)}
+              ></div>
+            ))}
+          </div>
+          <div className="playbutton-container" onClick={handleSlider}>
+            {isPaused ? (
+              <BsPlayCircle className="play-button" />
+            ) : (
+              <BsPauseCircle className="play-button" />
+            )}
+          </div>
         </div>
       </section>
     </div>
