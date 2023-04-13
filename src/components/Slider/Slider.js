@@ -104,7 +104,7 @@ const Slider = ({ images }) => {
   }, [actionHandler]);
 
   return (
-    <div className="test">
+    <div className="slideshowContainer">
       <section className="slideshow">
         <ul
           ref={containerRef}

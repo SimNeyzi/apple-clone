@@ -1,5 +1,4 @@
-.test {
-  border: 6px solid purple;
+.slideshowContainer {
   width: 100%;
   height: 70vh;
   overflow: hidden;
