@@ -53,40 +53,46 @@ const Slider = ({ images }) => {
     }
   }
 
-  const actionHandler = useCallback(() => {
-    console.log(containerRef.current.children[current - 1].style.border);
+  const actionHandler = useCallback(
+    (idx) => {
+      containerRef.current.style.transition = "ease 1000ms";
+      if (idx !== undefined) {
+        setTranslate(containerRef.current.clientWidth * (idx + 1));
+        setCurrent(idx + 1);
+      } else if (current >= images.length) {
+        setTranslate(containerRef.current.clientWidth * (images.length + 1));
+        setCurrent(1);
+      } else {
+        setTranslate(containerRef.current.clientWidth * (current + 1));
+        setCurrent((prev) => ++prev);
+      }
+    },
+    [current, images]
+  );
 
-    containerRef.current.style.transition = "ease 1000ms";
-    if (current >= images.length) {
-      setTranslate(containerRef.current.clientWidth * (images.length + 1));
-      setCurrent(1);
-    } else {
-      setTranslate(containerRef.current.clientWidth * (current + 1));
-      setCurrent((prev) => ++prev);
-    }
-  }, [current, images]);
+  const handleClick = (idx) => {
+    actionHandler(idx);
+  };
 
   useEffect(() => {
+    let activeSlide = containerRef.current.children[current];
     const transitionend = () => {
-      if (current <= 1) {
-        containerRef.current.style.transition = "ease 0ms";
+      if (current === 1) {
+        containerRef.current.style.transition = "0ms";
         setTranslate(containerRef.current.clientWidth * current);
       }
 
       if (current >= images.length) {
-        containerRef.current.style.transition = "ease 0ms";
+        containerRef.current.style.transition = "0ms";
         setTranslate(containerRef.current.clientWidth * images.length);
       }
     };
 
-    let activeSlide = containerRef.current;
-    console.log(activeSlide.children[current].style);
-    activeSlide.children[current].style.backgroundColor = "";
     document.addEventListener("transitionend", transitionend);
-
+    activeSlide.style.opacity = 1;
     return () => {
       document.removeEventListener("transitionend", transitionend);
-      // activeSlide.children[current].style.backdropFilter = "blur(4px)";
+      activeSlide.style.opacity = "0.33";
     };
   }, [current, images]);
 
@@ -114,6 +120,7 @@ const Slider = ({ images }) => {
             <div
               key={idx}
               className={`slideshowDot${current - 1 === idx ? " active" : ""}`}
+              onClick={() => handleClick(idx)}
             ></div>
           ))}
         </div>
