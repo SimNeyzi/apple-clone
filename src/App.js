@@ -17,12 +17,11 @@ import img3 from "./components/Slider/image03.jpg";
 const images = [img1, img2, img3];
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Navbar />
       <Iphone14 />
       <Iphone14Pro />
       <Watch />
-
       <div className="dual-section">
         <Ipad />
         <MacbookPro />
@@ -31,9 +30,7 @@ function App() {
         <HomePod />
         <AirPods />
       </div>
-
       <Slider images={images} />
-
       <Footer />
     </div>
   );

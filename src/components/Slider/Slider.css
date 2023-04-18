@@ -1,40 +1,45 @@
-.slideshowContainer {
+.slideshow {
   width: 100%;
   height: 100%;
-  overflow: hidden;
-}
-
-.slideshow {
-  width: 60%;
-  height: 90%;
+  position: relative;
+  width: 50em;
+  height: 30em;
   margin: 1em auto;
+  border: 6px solid purple;
 }
 
 .slideshowSlider {
   display: flex;
+  flex-shrink: 0;
   width: 100%;
   height: 100%;
   list-style: none;
   padding: 0;
   margin: 0;
+
+  /* border: 6px solid red; */
 }
 
 .slide {
-  display: flex;
   flex-shrink: 0;
   height: 100%;
   width: 100%;
-  padding-left: 1em;
   opacity: 0.33;
+  margin-left: 0.2em;
+  /* border: 2px solid orange; */
 }
-
-.navigation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.slide-img {
   width: 100%;
   height: 100%;
+}
+.navigation {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* width: 140%; */
+  /* height: 100%; */
   margin-top: 1em;
+  border: 2px solid red;
 }
 /* Buttons */
 .slideshowDots {
@@ -42,6 +47,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 4px solid green;
 }
 .slideshowDot {
   height: 0.5em;
@@ -58,9 +64,12 @@
 
 .playbutton-container {
   height: 100%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
+  width: 100%;
+  /* display: flex;
+  justify-content: flex-end;
+  align-items: center; */
+  border: 2px solid hotpink;
+  position: relative;
 }
 .play-button {
   cursor: pointer;

@@ -15,24 +15,28 @@ const Slider = ({ images }) => {
   const [translate, setTranslate] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const timeoutRef = useRef(null);
-  const delay = 2500;
+  const delay = 5000;
   const slides = useMemo(() => {
     if (images.length > 1) {
-      let items = images.map((child, index) => (
+      let items = images.map((image, index) => (
         <li key={index} className="slide">
-          <img src={child} alt="show" />
+          <img className="slide-img" src={image} alt="show" />
         </li>
       ));
       return [
         <li key={images.length + 1} className="slide">
-          <img src={images[images.length - 1]} alt="show" />
+          <img
+            className="slide-img"
+            src={images[images.length - 1]}
+            alt="show"
+          />
         </li>,
         ...items,
         <li key={images.length + 2} className="slide">
-          <img src={images[0]} alt="show" />
+          <img className="slide-img" src={images[0]} alt="show" />
         </li>,
         <li key={images.length + 3} className="slide">
-          <img src={images[1]} alt="show" />
+          <img className="slide-img" src={images[1]} alt="show" />
         </li>,
       ];
     }
@@ -83,6 +87,13 @@ const Slider = ({ images }) => {
 
   useEffect(() => {
     let activeSlide = containerRef.current.children[current];
+    // console.log(
+    //   "client width: ",
+    //   containerRef.current.clientWidth,
+    //   "current: ",
+    //   current
+    // );
+
     const transitionend = () => {
       if (current === 1) {
         containerRef.current.style.transition = "0ms";
@@ -114,39 +125,35 @@ const Slider = ({ images }) => {
   }, [actionHandler, isPaused]);
 
   return (
-    <div className="slideshowContainer">
-      <section className="slideshow">
-        <ul
-          ref={containerRef}
-          className="slideshowSlider"
-          style={{
-            transform: `translate(${-translate}px)`,
-          }}
-        >
-          {slides}
-        </ul>
-        <div className="navigation">
-          <div className={`slideshowDots`}>
-            {images.map((_, idx) => (
-              <div
-                key={idx}
-                className={`slideshowDot${
-                  current - 1 === idx ? " active" : ""
-                }`}
-                onClick={() => handleClick(idx)}
-              ></div>
-            ))}
-          </div>
-          <div className="playbutton-container" onClick={handleSlider}>
-            {isPaused ? (
-              <BsPlayCircle className="play-button" />
-            ) : (
-              <BsPauseCircle className="play-button" />
-            )}
-          </div>
+    <section className="slideshow">
+      <ul
+        ref={containerRef}
+        className="slideshowSlider"
+        style={{
+          transform: `translate(${-translate}px)`,
+        }}
+      >
+        {slides}
+      </ul>
+      <div className="navigation">
+        <div className={`slideshowDots`}>
+          {images.map((_, idx) => (
+            <div
+              key={idx}
+              className={`slideshowDot${current - 1 === idx ? " active" : ""}`}
+              onClick={() => handleClick(idx)}
+            ></div>
+          ))}
         </div>
-      </section>
-    </div>
+        <div className="playbutton-container" onClick={handleSlider}>
+          {isPaused ? (
+            <BsPlayCircle className="play-button" />
+          ) : (
+            <BsPauseCircle className="play-button" />
+          )}
+        </div>
+      </div>
+    </section>
   );
 };
 
