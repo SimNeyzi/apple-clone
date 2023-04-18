@@ -3,7 +3,7 @@
   color: #6f6f74;
   font-weight: 400;
   width: 100%;
-  height: 60%;
+  height: 80%;
   padding-top: 1em;
 }
 .disclaimer {
@@ -11,7 +11,7 @@
   /* margin: 8em 8em 0.5em 8em; */
   text-align: start;
   margin: auto;
-  padding: 2em 5em 2em 8em;
+  padding: 5% 20% 2% 20%;
 }
 
 .footer-bar {
@@ -19,7 +19,7 @@
   font-size: 0.7em;
   /* margin: 1em 8em 0.5em 8em; */
   margin: auto;
-  padding: 1em 8em;
+  padding: 0 20% 2% 20%;
   text-align: start;
   display: flex;
   flex-direction: column;
