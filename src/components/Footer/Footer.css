@@ -4,7 +4,8 @@
   font-weight: 400;
   width: 100%;
   height: 40em;
-  padding-top: 2em;
+  padding-top: 1em;
+  margin-top: 1em;
   /* border: 2px solid red; */
 }
 .disclaimer {

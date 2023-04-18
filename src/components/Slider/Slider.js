@@ -135,8 +135,9 @@ const Slider = ({ images }) => {
       >
         {slides}
       </ul>
+
       <div className="navigation">
-        <div className={`slideshowDots`}>
+        <span className={`slideshowDots`}>
           {images.map((_, idx) => (
             <div
               key={idx}
@@ -144,14 +145,14 @@ const Slider = ({ images }) => {
               onClick={() => handleClick(idx)}
             ></div>
           ))}
-        </div>
-        <div className="playbutton-container" onClick={handleSlider}>
+        </span>
+        <span className="playbutton-container" onClick={handleSlider}>
           {isPaused ? (
             <BsPlayCircle className="play-button" />
           ) : (
             <BsPauseCircle className="play-button" />
           )}
-        </div>
+        </span>
       </div>
     </section>
   );
