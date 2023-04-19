@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./Navbar.css";
 import pages from "./pagesData.js";
 import { FaApple } from "react-icons/fa";
 import { TfiSearch } from "react-icons/tfi";
 import { BsBag } from "react-icons/bs";
 import { TbMenu } from "react-icons/tb";
+import { useSpring, animated } from "@react-spring/web";
 
 const Navbar = () => {
   const [isShown, setIsShown] = useState(false);
   const [currentPage, setCurrenPage] = useState("");
   const [navColor, setNavColor] = useState("grey");
+
   return (
     <>
       <nav className={"nav-" + navColor}>
@@ -22,19 +24,20 @@ const Navbar = () => {
 
           {pages.map((page, key) => (
             <li
-              className="page"
+              className={`page`}
               key={page + key}
-              onMouseEnter={() => (
-                setIsShown(true), setCurrenPage(page.page), setNavColor("black")
-              )}
+              onMouseEnter={() => {
+                setIsShown(true);
+                setCurrenPage(page.page);
+                setNavColor("black");
+              }}
             >
               <a href="/" className="page__link">
                 {page.page}
               </a>
             </li>
           ))}
-        </ul>
-        <ul className="icons">
+
           <li className="search">
             <a href="/" className="search__link">
               <TfiSearch />
@@ -51,13 +54,14 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-
         {isShown && (
           <div
-            className="nav-flyout-scrool-container"
-            onMouseLeave={() => (
-              setIsShown(false), setCurrenPage(""), setNavColor("grey")
-            )}
+            className={`nav-flyout-scrool-container`}
+            onMouseLeave={() => {
+              setIsShown(false);
+              setCurrenPage("");
+              setNavColor("grey");
+            }}
           >
             <div className="nav-flyout-content">
               {pages.map(

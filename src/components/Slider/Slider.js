@@ -87,12 +87,6 @@ const Slider = ({ images }) => {
 
   useEffect(() => {
     let activeSlide = containerRef.current.children[current];
-    // console.log(
-    //   "client width: ",
-    //   containerRef.current.clientWidth,
-    //   "current: ",
-    //   current
-    // );
 
     const transitionend = () => {
       if (current === 1) {
