@@ -14,49 +14,48 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={"nav-" + navColor}>
-        <ul className="pages">
-          <li className="logo">
-            <a href="/" className="logo__link">
-              <FaApple />
-            </a>
-          </li>
-
-          {pages.map((page, key) => (
-            <li
-              className={`page`}
-              key={page + key}
-              onMouseEnter={() => {
-                setIsShown(true);
-                setCurrenPage(page.page);
-                setNavColor("black");
-              }}
-            >
-              <a href="/" className="page__link">
-                {page.page}
+      <nav className={`nav-${navColor} nav-container`}>
+        <div className="testo">
+          <ul className="pages">
+            <li className="logo">
+              <a href="/" className="logo__link">
+                <FaApple />
               </a>
             </li>
-          ))}
+            {pages.map((page, key) => (
+              <li
+                className={`page`}
+                key={page + key}
+                onMouseEnter={() => {
+                  setIsShown(true);
+                  setCurrenPage(page.page);
+                  setNavColor("black");
+                }}
+              >
+                <a href="/" className="page__link">
+                  {page.page}
+                </a>
+              </li>
+            ))}
+            <li className="search">
+              <a href="/" className="search__link">
+                <TfiSearch />
+              </a>
+            </li>
+            <li className="bag">
+              <a href="/" className="bag__link">
+                <BsBag />
+              </a>
+            </li>
+            <li className="menu">
+              <a href="/" className="menu__link">
+                <TbMenu />
+              </a>
+            </li>
+          </ul>
 
-          <li className="search">
-            <a href="/" className="search__link">
-              <TfiSearch />
-            </a>
-          </li>
-          <li className="bag">
-            <a href="/" className="bag__link">
-              <BsBag />
-            </a>
-          </li>
-          <li className="menu">
-            <a href="/" className="menu__link">
-              <TbMenu />
-            </a>
-          </li>
-        </ul>
-        {isShown && (
           <div
-            className={`nav-flyout-scrool-container`}
+            className={`nav-flyout-scrool-container flyout-scroll-container-${isShown}`}
             onMouseLeave={() => {
               setIsShown(false);
               setCurrenPage("");
@@ -68,13 +67,13 @@ const Navbar = () => {
                 (page, key) =>
                   page.page === currentPage &&
                   page.subMenus.map((submenu, key) => (
-                    <div className=" submenu-container">
+                    <div className="submenu-container">
                       <div key={submenu + key} className="submenu-heading">
                         {submenu.heading}
                       </div>
                       <ul className="submenu-items">
                         {submenu.items.map((item, key) => (
-                          <li>
+                          <li className="submenu-item">
                             <a href="/" className="item-link">
                               {item}
                             </a>
@@ -86,7 +85,7 @@ const Navbar = () => {
               )}
             </div>
           </div>
-        )}
+        </div>
       </nav>
     </>
   );

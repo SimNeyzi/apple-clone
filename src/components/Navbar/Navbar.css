@@ -20,6 +20,17 @@ nav {
   background-color: black;
 }
 
+.testo {
+  /* display: flex; */
+  /* flex-direction: column; */
+  display: flex;
+  justify-content: space-evenly;
+  /* justify-content: center;
+  align-items: center; */
+  border: 8px solid orange;
+  width: 95%;
+}
+
 .pages {
   display: flex;
   width: 100%;
@@ -59,52 +70,83 @@ nav {
   /* display: flex;
   justify-content: center; */
   position: absolute;
-  z-index: 5;
+
   top: 2.8em;
-  background-color: black;
+  /* background-color: black; */
   width: 100%;
   height: 22em;
 }
 
-.nav-flyout-content {
-  color: antiquewhite;
-  width: 55%;
-  margin: 1em auto;
-  display: flex;
-  justify-content: space-evenly;
-  /* border: 2px solid orange; */
+.flyout-scroll-container-true {
+  background-color: black;
   animation-name: slidedown;
-  animation-duration: 5s;
+  z-index: 5;
+  animation-duration: 0.3s;
 }
 
 @keyframes slidedown {
   from {
     height: 0;
+    background-color: transparent;
   }
 
   to {
     height: 22em;
+    background-color: black;
   }
 }
 
+.flyout-scroll-container-false {
+  animation-name: slideup;
+  animation-duration: 0.3s;
+  z-index: 0;
+}
+
+@keyframes slideup {
+  from {
+    height: 22em;
+    background-color: black;
+  }
+
+  to {
+    height: 0;
+    background-color: transparent;
+  }
+}
+
+.nav-flyout-content {
+  color: antiquewhite;
+  width: 90%;
+  margin: 1em auto;
+  display: flex;
+  justify-content: space-evenly;
+  border: 2px solid blue;
+}
+
 .submenu-container {
-  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
   margin: 1em 3em 1em 0;
 }
 
 .submenu-items {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: flex-start;
   list-style-type: none;
   font-size: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+
+.submenu-item {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .submenu-heading {
+  display: flex;
   font-size: 0.8em;
   margin-bottom: 1.5em;
   color: #7a7a7b;
