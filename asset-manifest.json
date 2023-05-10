@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/apple-clone/static/css/main.5359fc94.css",
+    "main.js": "/apple-clone/static/js/main.6277d30b.js",
+    "static/media/image01.jpg": "/apple-clone/static/media/image01.1789a54492ee2c5d61af.jpg",
+    "static/media/image03.jpg": "/apple-clone/static/media/image03.b5682c05d2bed521b1cd.jpg",
+    "static/media/airPods.jpg": "/apple-clone/static/media/airPods.170c7cfdddc713469d29.jpg",
+    "static/media/image02.jpg": "/apple-clone/static/media/image02.0b1e9e339086ec547f21.jpg",
+    "static/media/iphone14Pro.jpg": "/apple-clone/static/media/iphone14Pro.d5d0be20301a1bcb1d18.jpg",
+    "static/media/homePod.jpg": "/apple-clone/static/media/homePod.181c53d73240bd6fe294.jpg",
+    "static/media/iphone14__yellow.jpg": "/apple-clone/static/media/iphone14__yellow.82304565863af93d9401.jpg",
+    "static/media/watch.jpg": "/apple-clone/static/media/watch.976dccf603ea34d5d595.jpg",
+    "static/media/ipad.jpg": "/apple-clone/static/media/ipad.f6f1bae5b142da4fc0d2.jpg",
+    "static/media/macbookPro.jpg": "/apple-clone/static/media/macbookPro.01c07b4f3fa21b36e8b7.jpg",
+    "index.html": "/apple-clone/index.html",
+    "main.5359fc94.css.map": "/apple-clone/static/css/main.5359fc94.css.map",
+    "main.6277d30b.js.map": "/apple-clone/static/js/main.6277d30b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5359fc94.css",
+    "static/js/main.6277d30b.js"
+  ]
+}
