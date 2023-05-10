@@ -16,43 +16,45 @@ const Navbar = () => {
     <>
       <nav className={`nav-${navColor} nav-container`}>
         <div className="testo">
-          <ul className="pages">
-            <li className="logo">
-              <a href="/" className="logo__link">
-                <FaApple />
-              </a>
-            </li>
-            {pages.map((page, key) => (
-              <li
-                className={`page`}
-                key={page + key}
-                onMouseEnter={() => {
-                  setIsShown(true);
-                  setCurrenPage(page.page);
-                  setNavColor("black");
-                }}
-              >
-                <a href="/" className="page__link">
-                  {page.page}
+          <div className="pages-container">
+            <ul className="pages">
+              <li className="logo">
+                <a href="/" className="logo__link">
+                  <FaApple />
                 </a>
               </li>
-            ))}
-            <li className="search">
-              <a href="/" className="search__link">
-                <TfiSearch />
-              </a>
-            </li>
-            <li className="bag">
-              <a href="/" className="bag__link">
-                <BsBag />
-              </a>
-            </li>
-            <li className="menu">
-              <a href="/" className="menu__link">
-                <TbMenu />
-              </a>
-            </li>
-          </ul>
+              {pages.map((page, key) => (
+                <li
+                  className={`page`}
+                  key={page + key}
+                  onMouseEnter={() => {
+                    setIsShown(true);
+                    setCurrenPage(page.page);
+                    setNavColor("black");
+                  }}
+                >
+                  <a href="/" className="page__link">
+                    {page.page}
+                  </a>
+                </li>
+              ))}
+              <li className="search">
+                <a href="/" className="search__link">
+                  <TfiSearch />
+                </a>
+              </li>
+              <li className="bag">
+                <a href="/" className="bag__link">
+                  <BsBag />
+                </a>
+              </li>
+              <li className="menu">
+                <a href="/" className="menu__link">
+                  <TbMenu />
+                </a>
+              </li>
+            </ul>
+          </div>
 
           <div
             className={`nav-flyout-scrool-container flyout-scroll-container-${isShown}`}

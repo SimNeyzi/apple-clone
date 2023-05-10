@@ -21,14 +21,23 @@ nav {
 }
 
 .testo {
-  /* display: flex; */
-  /* flex-direction: column; */
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
   /* justify-content: center;
   align-items: center; */
-  border: 8px solid orange;
-  width: 95%;
+  /* border: 8px solid orange; */
+  /* text-align: center; */
+  /* margin: auto; */
+  width: 100%;
+  height: 100%;
+}
+
+.pages-container {
+  display: flex;
+  justify-content: center;
+  /* border: 9px solid yellow; */
 }
 
 .pages {
@@ -37,18 +46,24 @@ nav {
   font-size: 0.8em;
   list-style-type: none;
   align-items: center;
-  justify-content: space-evenly;
+  /* justify-content: flex-start; */
+  /* border: 2px solid purple; */
+  margin-left: 16%;
+  /* margin-right: 16%; */
+  padding: 0;
 }
 
 .page__link {
+  display: flex;
   text-decoration: none;
   color: white;
+  margin-left: 25px;
 }
 
 .search,
 .bag {
   font-size: 1.2em;
-  /* margin: 1em; */
+  margin-left: 25px;
 }
 
 .menu {
@@ -57,6 +72,7 @@ nav {
 
 .logo {
   font-size: 1.5em;
+  margin-left: 0;
 }
 
 .logo__link,
@@ -67,14 +83,15 @@ nav {
 }
 
 .nav-flyout-scrool-container {
-  /* display: flex;
-  justify-content: center; */
+  display: flex;
+  justify-content: center;
   position: absolute;
 
   top: 2.8em;
   /* background-color: black; */
   width: 100%;
   height: 22em;
+  /* border: 6px solid red; */
 }
 
 .flyout-scroll-container-true {
@@ -116,11 +133,15 @@ nav {
 
 .nav-flyout-content {
   color: antiquewhite;
-  width: 90%;
-  margin: 1em auto;
+  width: 100%;
+  /* margin: 1em auto; */
+
   display: flex;
-  justify-content: space-evenly;
-  border: 2px solid blue;
+
+  justify-content: flex-start;
+  margin-left: 16%;
+  /* margin-right: 16%; */
+  /* border: 2px solid blue; */
 }
 
 .submenu-container {
@@ -156,7 +177,7 @@ nav {
   color: antiquewhite;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 880px) {
   .page {
     display: none;
   }
@@ -167,6 +188,7 @@ nav {
     height: 100%;
     position: relative;
     /* border: 8px solid blue; */
+    margin: 0;
   }
 
   .logo {
@@ -223,12 +245,25 @@ nav {
 @media only screen and (min-width: 768px) {
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (max-width: 1065px) {
+  .pages {
+    /* display: flex; */
+    /* justify-content: space-evenly; */
+
+    /* margin: 0; */
+    margin-left: 3%;
+  }
+
+  .nav-flyout-content {
+    margin-left: 3%;
+    /* justify-content: space-evenly; */
+  }
+  .page__link,
+  .search,
+  .bag {
+    /* margin-left: 10px; */
+  }
 }
 
 @media only screen and (min-width: 1200px) {
-  .pages {
-    width: 60%;
-    justify-content: space-around;
-  }
 }
